@@ -1,4 +1,6 @@
 <title>Fine Arts by Henrimae</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap">
@@ -14,7 +16,7 @@
     --accent-ink: #B65E2E;
     --shadow: 0 1px 2px rgba(27, 37, 71, 0.04);
   }
-  html { color-scheme: light; }
+  html { color-scheme: light; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
   * { box-sizing: border-box; }
   body {
@@ -25,7 +27,9 @@
     line-height: 1.6;
     margin: 0;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
+  img, svg { max-width: 100%; display: block; }
   a { color: inherit; text-decoration: none; }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
@@ -54,7 +58,7 @@
   .container { max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
 
   nav.top {
-    position: sticky; top: 0; z-index: 10;
+    position: sticky; top: 0; z-index: 20;
     background: color-mix(in srgb, var(--ground) 92%, transparent);
     backdrop-filter: saturate(1.4) blur(10px);
     border-bottom: 1px solid var(--rule);
@@ -62,12 +66,14 @@
   nav.top .inner {
     display: flex; align-items: center; justify-content: space-between;
     padding: 1.1rem 2rem; max-width: 1180px; margin: 0 auto;
+    gap: 1rem;
   }
   .brand {
     font-family: 'Fraunces', serif;
     font-size: 1.35rem;
     letter-spacing: 0.01em;
     color: var(--ink);
+    white-space: nowrap;
   }
   .brand span { color: var(--accent-ink); }
   nav.top ul {
@@ -77,6 +83,18 @@
   }
   nav.top li a:hover { color: var(--ink); }
   nav.top .actions { display: flex; gap: 1rem; align-items: center; font-size: 0.85rem; color: var(--ink-2); }
+
+  .nav-toggle {
+    display: none;
+    background: transparent; border: 0; padding: 0.5rem;
+    margin: -0.5rem; cursor: pointer; color: var(--ink);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .nav-toggle svg { width: 24px; height: 24px; display: block; }
+  .nav-toggle .icon-close { display: none; }
+  body.nav-open { overflow: hidden; }
+  body.nav-open .nav-toggle .icon-open { display: none; }
+  body.nav-open .nav-toggle .icon-close { display: block; }
 
   .btn {
     display: inline-block;
@@ -291,19 +309,97 @@
   }
 
   @media (max-width: 900px) {
-    .hero, .story, .wearable { grid-template-columns: 1fr; gap: 2.5rem; }
-    .works { grid-template-columns: 1fr 1fr; }
+    .hero, .story, .wearable { grid-template-columns: 1fr; gap: 2rem; }
+    .works { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .row { grid-template-columns: 1fr; gap: 0.75rem; padding: 1.5rem 0; }
-    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .section-head { flex-direction: column; align-items: flex-start; gap: 1.25rem; margin-bottom: 2rem; }
+
+    /* Show hamburger, hide desktop nav */
     nav.top ul { display: none; }
-    .section-head { flex-direction: column; align-items: flex-start; }
+    nav.top .actions { display: none; }
+    .nav-toggle { display: inline-flex; }
+
+    /* Mobile nav drawer */
+    #primary-nav {
+      position: fixed;
+      inset: var(--nav-h, 58px) 0 0 0;
+      background: var(--ground);
+      display: none;
+      flex-direction: column;
+      padding: 1.5rem 1.25rem 2rem;
+      gap: 0.25rem;
+      z-index: 15;
+      overflow-y: auto;
+      border-top: 1px solid var(--rule);
+    }
+    body.nav-open #primary-nav { display: flex; }
+    #primary-nav li {
+      list-style: none;
+      border-bottom: 1px solid var(--rule);
+    }
+    #primary-nav li a {
+      display: block;
+      padding: 1.1rem 0.25rem;
+      font-family: 'Fraunces', serif;
+      font-size: 1.4rem;
+      color: var(--ink);
+    }
+    #primary-nav .mobile-actions {
+      display: flex; gap: 1rem; margin-top: 1.5rem;
+      font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--ink-2);
+    }
+    #primary-nav .mobile-actions a { padding: 0.5rem 0; }
   }
-  @media (max-width: 560px) {
+
+  @media (max-width: 640px) {
     .container { padding: 0 1.25rem; }
-    nav.top .inner { padding: 1rem 1.25rem; }
-    .works { grid-template-columns: 1fr; }
-    .foot-grid { grid-template-columns: 1fr; }
-    .foot-bar { flex-direction: column; gap: 0.5rem; }
+    nav.top .inner { padding: 0.9rem 1.25rem; }
+    .brand { font-size: 1.15rem; }
+
+    section { padding: 3rem 0; }
+    .hero { padding: 2rem 0 2.5rem; gap: 1.75rem; }
+    .hero .lede p { font-size: 1rem; margin: 1.15rem 0 1.5rem; }
+    h1 { font-size: clamp(2rem, 8vw, 2.6rem); }
+    h2 { font-size: clamp(1.5rem, 5.5vw, 1.9rem); }
+
+    .hero-art { aspect-ratio: 4 / 4.5; }
+    .story-portrait, .wearable-art { aspect-ratio: 4 / 4.5; }
+    .work-art { aspect-ratio: 4 / 5; }
+
+    /* Full-width, tappable CTAs */
+    .hero .ctas { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+    .hero .ctas .btn { text-align: center; padding: 1rem 1.4rem; }
+    .section-head .btn-ghost { align-self: stretch; text-align: center; }
+
+    .works { grid-template-columns: 1fr; gap: 2rem; }
+    .work-meta { padding-top: 0.9rem; }
+
+    /* Investment rows: tighter, no full-width link button styling */
+    .row { padding: 1.25rem 0; }
+    .row .label { font-size: 0.68rem; }
+    .row .link { justify-self: start; }
+
+    /* Impact/section-head links should feel like a natural button */
+    section .section-head .btn-ghost { margin-top: 0.25rem; }
+
+    /* Testimonial: less air on phone */
+    .testimonial { padding: 0; }
+    .testimonial blockquote { font-size: 1.25rem; line-height: 1.4; }
+
+    /* Footer */
+    footer { padding: 2.5rem 0 1.5rem; }
+    .foot-grid { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 2rem; }
+    .newsletter { flex-direction: column; }
+    .newsletter button { padding: 0.85rem 1.1rem; }
+    .foot-bar { flex-direction: column; gap: 0.5rem; text-align: left; }
+  }
+
+  @media (max-width: 380px) {
+    .brand { font-size: 1.05rem; }
+    .container { padding: 0 1rem; }
+    nav.top .inner { padding: 0.85rem 1rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -314,17 +410,25 @@
 <nav class="top">
   <div class="inner">
     <a class="brand" href="#">Fine Arts <span>by Henrimae</span></a>
-    <ul>
+    <ul id="primary-nav">
       <li><a href="#works">Shop</a></li>
       <li><a href="#invest">Invest in Art</a></li>
       <li><a href="#story">My Story</a></li>
       <li><a href="#impact">Impact</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li class="mobile-actions">
+        <a href="#">Search</a>
+        <a href="#">Cart (0)</a>
+      </li>
     </ul>
     <div class="actions">
       <a href="#" aria-label="Search">Search</a>
       <a href="#" aria-label="Cart">Cart (0)</a>
     </div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-controls="primary-nav" aria-expanded="false">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
   </div>
 </nav>
 
@@ -507,3 +611,33 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primary-nav');
+    const bar = document.querySelector('nav.top');
+    if (!toggle || !nav) return;
+    const syncNavH = () => {
+      if (bar) document.documentElement.style.setProperty('--nav-h', bar.offsetHeight + 'px');
+    };
+    syncNavH();
+    window.addEventListener('resize', syncNavH);
+    const setOpen = (open) => {
+      document.body.classList.toggle('nav-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    toggle.addEventListener('click', () => {
+      setOpen(!document.body.classList.contains('nav-open'));
+    });
+    nav.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') setOpen(false);
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) setOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  })();
+</script>
