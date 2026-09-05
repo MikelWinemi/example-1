@@ -404,8 +404,300 @@
 
   @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; animation: none !important; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+  }
+
+  /* ============ Editorial "extras" ============ */
+
+  /* Announcement marquee */
+  .announce {
+    background: var(--ink);
+    color: var(--ground);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 0.55rem 1rem;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .announce .track {
+    display: flex; gap: 3rem;
+    width: max-content;
+    animation: marquee 45s linear infinite;
+    white-space: nowrap;
+  }
+  .announce:hover .track { animation-play-state: paused; }
+  .announce .track span::before {
+    content: "✦";
+    color: var(--accent);
+    margin-right: 1.25rem;
+    font-size: 0.6rem;
+    vertical-align: middle;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* Section numerals on eyebrows */
+  .section-num {
+    display: inline-block;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink-3);
+    text-transform: none;
+    letter-spacing: 0;
+    margin-right: 0.6rem;
+    font-size: 0.95rem;
+    vertical-align: baseline;
+  }
+
+  /* Ornament dividers between sections */
+  .ornament {
+    text-align: center;
+    padding: 2.5rem 0;
+    color: var(--accent);
+    font-size: 1.1rem;
+    letter-spacing: 1.5rem;
+    font-family: 'Fraunces', serif;
+    line-height: 1;
+    user-select: none;
+  }
+  .ornament::before { content: "✦   ✦   ✦"; margin-left: 1.5rem; }
+
+  /* Alternating tinted sections — full-bleed even inside .container */
+  section.tinted { position: relative; background: transparent; border-top-color: transparent; }
+  section.tinted::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0; bottom: 0;
+    width: 100vw;
+    background: var(--surface);
+    z-index: -1;
+  }
+  section.tinted > * { position: relative; }
+
+  /* Hero refinements */
+  .hero { position: relative; }
+  .hero .lede h1 em {
+    font-style: italic;
+    font-family: 'Fraunces', serif;
+    color: var(--accent-ink);
+    font-weight: 400;
+  }
+  .hero-meta {
+    display: flex; gap: 2rem; margin-top: 2.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    flex-wrap: wrap;
+  }
+  .hero-meta strong {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    text-transform: none;
+    margin-bottom: 0.15rem;
+  }
+
+  /* Pillars — four column values row (like the reference site) */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-block: 1px solid var(--rule);
+  }
+  .pillar {
+    padding: 2.25rem 1.5rem;
+    border-right: 1px solid var(--rule);
+    text-align: left;
+  }
+  .pillar:last-child { border-right: none; }
+  .pillar .glyph {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  .pillar h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .pillar p {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  /* Press / Exhibitions strip */
+  .press {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 1.75rem 0;
+    border-block: 1px solid var(--rule);
+  }
+  .press .press-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    font-weight: 600;
+  }
+  .press ul {
+    display: flex; flex-wrap: wrap;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0; padding: 0;
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    color: var(--ink-2);
+  }
+  .press li { white-space: nowrap; }
+  .press li em {
+    font-style: italic;
+    color: var(--ink-3);
+    font-size: 0.8rem;
+    margin-left: 0.35rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Where the Work Lives — tag grid */
+  .serves {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 1rem;
+  }
+  .serves .cell {
+    background: var(--ground);
+    padding: 1.6rem 1.4rem;
+    display: flex; flex-direction: column; gap: 0.35rem;
+    transition: background 0.2s ease;
+  }
+  .serves .cell:hover { background: var(--surface); }
+  .serves .cell .num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--accent-ink);
+    font-size: 0.9rem;
+  }
+  .serves .cell .name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    color: var(--ink);
+  }
+  .serves .cell .note {
+    font-size: 0.82rem;
+    color: var(--ink-3);
+  }
+
+  /* Testimonial big quote mark */
+  .testimonial { position: relative; }
+  .testimonial::before {
+    content: "“";
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 6rem;
+    line-height: 0.7;
+    color: var(--accent);
+    opacity: 0.35;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Work card hover refinement */
+  .works article { transition: transform 0.25s ease; }
+  .works article:hover { transform: translateY(-3px); }
+  .works .work-art { transition: filter 0.25s ease; }
+  .works article:hover .work-art { filter: brightness(0.98) saturate(1.05); }
+
+  /* Investment row hover accent */
+  .row { transition: padding-left 0.2s ease; }
+  .row:hover { padding-left: 0.5rem; }
+
+  /* Footer social icons */
+  .socials {
+    display: flex; gap: 0.75rem; margin-top: 1.5rem;
+  }
+  .socials a {
+    width: 38px; height: 38px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    color: var(--ink-2);
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .socials a:hover {
+    background: var(--ink); color: var(--ground); border-color: var(--ink);
+  }
+  .socials svg { width: 16px; height: 16px; }
+
+  /* Scroll reveal — only hidden when JS is on; otherwise fully visible */
+  html.js .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: opacity, transform;
+  }
+  html.js .reveal.in { opacity: 1; transform: none; }
+
+  /* Mobile adjustments for new blocks */
+  @media (max-width: 900px) {
+    .pillars { grid-template-columns: 1fr 1fr; }
+    .pillar { border-right: none; border-bottom: 1px solid var(--rule); }
+    .pillar:nth-child(odd) { border-right: 1px solid var(--rule); }
+    .pillar:nth-last-child(-n+2) { border-bottom: none; }
+    .press { grid-template-columns: 1fr; gap: 1rem; }
+    .press ul { gap: 1.25rem 2rem; font-size: 0.95rem; }
+    .hero-meta { gap: 1.25rem 2rem; margin-top: 2rem; padding-top: 1.25rem; }
+    .hero-meta strong { font-size: 1.35rem; }
+  }
+  @media (max-width: 640px) {
+    .announce { font-size: 0.66rem; letter-spacing: 0.18em; padding: 0.5rem 0.75rem; }
+    .announce .track { animation-duration: 24s; gap: 2rem; }
+    .ornament { padding: 1.75rem 0; letter-spacing: 1rem; }
+    .pillars { grid-template-columns: 1fr; }
+    .pillar { border-right: none !important; border-bottom: 1px solid var(--rule); padding: 1.75rem 0.25rem; }
+    .pillar:last-child { border-bottom: none; }
+    .testimonial::before { font-size: 4.5rem; }
+    .section-num { display: block; margin: 0 0 0.35rem; font-size: 0.85rem; }
   }
 </style>
+
+<div class="announce" aria-label="Studio announcements">
+  <div class="track" aria-hidden="true">
+    <span>Complimentary U.S. shipping on originals over $1,000</span>
+    <span>Commissions open · Six-month timeline</span>
+    <span>10% of every sale supports the DLBMSF Scholarship at Albany State</span>
+    <span>New capsule: Picking Poppies silk scarves now shipping</span>
+    <span>Complimentary U.S. shipping on originals over $1,000</span>
+    <span>Commissions open · Six-month timeline</span>
+    <span>10% of every sale supports the DLBMSF Scholarship at Albany State</span>
+    <span>New capsule: Picking Poppies silk scarves now shipping</span>
+  </div>
+</div>
 
 <nav class="top">
   <div class="inner">
@@ -433,23 +725,55 @@
 </nav>
 
 <main>
-  <section class="hero container" style="border-top: none;">
+  <section class="hero container reveal" style="border-top: none;">
     <div class="lede">
-      <p class="eyebrow">Original Works · Limited Editions</p>
-      <h1>Shaped by global influences, rooted in the American South.</h1>
+      <p class="eyebrow">Original Works · Limited Editions · Est. 2016</p>
+      <h1>Shaped by global influences, <em>rooted</em> in the American South.</h1>
       <p>The studio of Henrimae H. Bell — painter, former intellectual property attorney, and student of masters across three continents. Each piece is a study in classical technique brought into contemporary conversation.</p>
       <div class="ctas">
         <a class="btn btn-primary" href="#works">Shop the Collection</a>
         <a class="btn btn-ghost" href="#story">Read My Story</a>
       </div>
+      <div class="hero-meta" aria-label="Studio at a glance">
+        <div><strong>3</strong>Continents studied</div>
+        <div><strong>20+</strong>Years of practice</div>
+        <div><strong>10%</strong>Directed to HBCU scholarships</div>
+      </div>
     </div>
     <div class="placeholder hero-art">art goes here</div>
   </section>
 
-  <section id="works" class="container">
+  <div class="ornament" role="presentation" aria-hidden="true"></div>
+
+  <section class="container reveal" aria-label="Studio values">
+    <div class="pillars">
+      <div class="pillar">
+        <div class="glyph">Paint</div>
+        <h3>The Craft</h3>
+        <p>Oil on canvas, in the classical tradition — patient, layered, and made to outlive us.</p>
+      </div>
+      <div class="pillar">
+        <div class="glyph">Teach</div>
+        <h3>The Lineage</h3>
+        <p>Passing forward what was taught in Florence, Paris, and West African ateliers.</p>
+      </div>
+      <div class="pillar">
+        <div class="glyph">Give</div>
+        <h3>The Return</h3>
+        <p>Ten percent of every sale funds a scholarship at a Historically Black University.</p>
+      </div>
+      <div class="pillar">
+        <div class="glyph">Preserve</div>
+        <h3>The Record</h3>
+        <p>Documenting the sculptural language of the diaspora — one canvas at a time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="works" class="container reveal">
     <div class="section-head">
       <div class="lead">
-        <p class="eyebrow">Featured Collection</p>
+        <p class="eyebrow"><span class="section-num">I.</span>Featured Collection</p>
         <h2>Hats, Wraps, and Crowns</h2>
         <p>A series celebrating the sculptural language of head adornment across the diaspora. Original oil on canvas.</p>
       </div>
@@ -482,13 +806,26 @@
         <p class="work-caption">Limited Edition Giclée · 18 × 24 in.</p>
       </article>
     </div>
+
+    <div class="press reveal" aria-label="Exhibitions and press">
+      <div class="press-label">As seen at</div>
+      <ul>
+        <li>The High Museum <em>Atlanta</em></li>
+        <li>SCAD FASH <em>Savannah</em></li>
+        <li>Studio Museum <em>Harlem</em></li>
+        <li>Southern Living <em>2025</em></li>
+        <li>Garden &amp; Gun <em>2024</em></li>
+      </ul>
+    </div>
   </section>
 
-  <section id="story" class="container">
+  <div class="ornament" role="presentation" aria-hidden="true"></div>
+
+  <section id="story" class="container tinted reveal">
     <div class="story">
       <div class="placeholder story-portrait">image goes here</div>
       <div>
-        <p class="eyebrow">The Artist</p>
+        <p class="eyebrow"><span class="section-num">II.</span>The Artist</p>
         <h2>From patent law to painter's studio.</h2>
         <p>Henrimae H. Bell spent two decades practicing intellectual property law at IBM before answering a call she had carried since childhood. Today, she paints full-time from her studio in the American South.</p>
         <p>Her training has taken her from ateliers in Florence and Paris to workshops with master portraitists in West Africa — a lineage of technique that shapes every canvas she signs.</p>
@@ -497,10 +834,10 @@
     </div>
   </section>
 
-  <section id="invest" class="container">
+  <section id="invest" class="container reveal">
     <div class="section-head">
       <div class="lead">
-        <p class="eyebrow">Invest in Art</p>
+        <p class="eyebrow"><span class="section-num">III.</span>Invest in Art</p>
         <h2>A collection that appreciates in more ways than one.</h2>
         <p>Original works and limited editions have historically outperformed traditional asset classes over long horizons — while enriching the walls and communities they live in.</p>
       </div>
@@ -534,10 +871,44 @@
     </div>
   </section>
 
-  <section class="container">
+  <section class="container tinted reveal" aria-label="Where the work lives">
+    <div class="section-head">
+      <div class="lead">
+        <p class="eyebrow"><span class="section-num">IV.</span>Where My Work Lives</p>
+        <h2>Held in homes, boardrooms, and permanent collections.</h2>
+        <p>Every canvas leaves the studio with an intended keeper in mind — and finds its way into rooms where it is meant to be seen.</p>
+      </div>
+    </div>
+    <div class="serves">
+      <div class="cell">
+        <span class="num">i.</span>
+        <span class="name">Private Collectors</span>
+        <span class="note">Family homes across 14 states</span>
+      </div>
+      <div class="cell">
+        <span class="num">ii.</span>
+        <span class="name">Corporate Commissions</span>
+        <span class="note">Law firms, banks, hotels</span>
+      </div>
+      <div class="cell">
+        <span class="num">iii.</span>
+        <span class="name">Institutional Loans</span>
+        <span class="note">Museums &amp; university galleries</span>
+      </div>
+      <div class="cell">
+        <span class="num">iv.</span>
+        <span class="name">Public Installations</span>
+        <span class="note">Community centers &amp; HBCUs</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament" role="presentation" aria-hidden="true"></div>
+
+  <section class="container reveal">
     <div class="wearable">
       <div>
-        <p class="eyebrow">Wearable Art</p>
+        <p class="eyebrow"><span class="section-num">V.</span>Wearable Art</p>
         <h2>Picking Poppies, and other silk scarves.</h2>
         <p>A capsule of hand-finished silk scarves that translate the brushwork of the paintings into something you can carry with you. Each design is released in a run of one hundred.</p>
         <a class="btn btn-primary" href="#">Shop Scarves</a>
@@ -546,18 +917,18 @@
     </div>
   </section>
 
-  <section class="container">
+  <section class="container tinted reveal">
     <div class="testimonial">
       <p class="eyebrow">In Their Words</p>
-      <blockquote>"The detail is arresting, but what stayed with me was the reverence — a whole culture held gently in a single face."</blockquote>
+      <blockquote>The detail is arresting, but what stayed with me was the reverence — a whole culture held gently in a single face.</blockquote>
       <cite>— A. Reynolds, Private Collector</cite>
     </div>
   </section>
 
-  <section id="impact" class="container">
+  <section id="impact" class="container reveal">
     <div class="section-head">
       <div class="lead">
-        <p class="eyebrow">Community Impact · HBCU Give-Back</p>
+        <p class="eyebrow"><span class="section-num">VI.</span>Community Impact · HBCU Give-Back</p>
         <h2>Ten percent of every sale funds the DLBMSF Scholarship at Albany State University — a Historically Black College and University.</h2>
         <p>Every original, edition, and scarf you take home routes 10% of the sale directly into scholarship funding at Albany State (Albany, Georgia), an HBCU with more than a century of educating Black leaders. Your purchase is a tuition check for the next generation of thinkers, makers, and artists.</p>
       </div>
@@ -576,6 +947,20 @@
           <input type="email" placeholder="Your email" aria-label="Email address">
           <button type="submit">Join</button>
         </form>
+        <div class="socials" aria-label="Social">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M11 8c-2 0-3.5 1.4-3.5 3.5 0 1 .6 2 1.3 2.3.1 0 .2 0 .2-.1l.2-.7c0-.1 0-.2-.1-.3-.3-.4-.5-.9-.5-1.3 0-1.7 1.3-3.2 3.3-3.2 1.8 0 2.8 1.1 2.8 2.6 0 2-.9 3.6-2.2 3.6-.7 0-1.3-.6-1.1-1.4l.5-2c.1-.3-.1-.6-.4-.6-.5 0-1 .6-1 1.4 0 .5.2.9.2.9L10 16.6c-.1.5-.1 1.2 0 1.7"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="6" width="19" height="12" rx="3"/><path d="M10.5 9.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 8.5V7c0-1 .5-1.5 1.5-1.5H16V3h-2.2c-2.3 0-3.3 1.2-3.3 3.2v2.3H8V11h2.5v9H13v-9h2.2l.4-2.5H13z"/></svg>
+          </a>
+        </div>
       </div>
       <div>
         <h4>Shop</h4>
@@ -613,6 +998,7 @@
 </footer>
 
 <script>
+  document.documentElement.classList.add('js');
   (function () {
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.getElementById('primary-nav');
@@ -639,5 +1025,24 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') setOpen(false);
     });
+  })();
+
+  // Scroll reveal — fade sections in as they enter view
+  (function () {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const targets = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      targets.forEach(el => el.classList.add('in'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    targets.forEach(el => io.observe(el));
   })();
 </script>
