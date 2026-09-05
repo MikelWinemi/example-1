@@ -1,0 +1,509 @@
+<title>Fine Arts by Henrimae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --ground: #FFFFFF;
+    --surface: #F6F6F5;
+    --ink: #1B2547;
+    --ink-2: #4A5578;
+    --ink-3: #8A90A5;
+    --rule: #E8E7E4;
+    --accent: #E8905E;
+    --accent-ink: #B65E2E;
+    --shadow: 0 1px 2px rgba(27, 37, 71, 0.04);
+  }
+  html { color-scheme: light; }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.05; font-weight: 400; }
+  h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.15; }
+  h3 { font-size: 1.15rem; font-weight: 500; }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+  }
+
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
+
+  nav.top {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--ground) 92%, transparent);
+    backdrop-filter: saturate(1.4) blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.top .inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 2rem; max-width: 1180px; margin: 0 auto;
+  }
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-size: 1.35rem;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+  }
+  .brand span { color: var(--accent-ink); }
+  nav.top ul {
+    display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0;
+    font-size: 0.86rem; font-weight: 500;
+    color: var(--ink-2);
+  }
+  nav.top li a:hover { color: var(--ink); }
+  nav.top .actions { display: flex; gap: 1rem; align-items: center; font-size: 0.85rem; color: var(--ink-2); }
+
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 1.6rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary { background: var(--ink); color: var(--ground); }
+  .btn-primary:hover { background: var(--accent-ink); }
+  .btn-ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: var(--ground); }
+
+  /* Hero */
+  .hero {
+    padding: 5rem 0 4rem;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .hero .lede p {
+    color: var(--ink-2);
+    font-size: 1.05rem;
+    max-width: 32rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .hero .ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .placeholder {
+    background: var(--surface);
+    border: 1px dashed var(--rule);
+    color: var(--ink-3);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+  }
+  .hero-art { aspect-ratio: 4 / 5; }
+
+  /* Section base */
+  section { padding: 4.5rem 0; border-top: 1px solid var(--rule); }
+  .section-head {
+    display: flex; justify-content: space-between; align-items: end;
+    gap: 2rem; margin-bottom: 2.5rem;
+  }
+  .section-head .lead { max-width: 34rem; }
+  .section-head p { color: var(--ink-2); margin: 0.75rem 0 0; }
+
+  /* Works grid */
+  .works {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .work-art { aspect-ratio: 3 / 4; }
+  .work-meta {
+    padding: 1.1rem 0.25rem 0;
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 1rem;
+  }
+  .work-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+  .work-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--ink-2);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.05em;
+  }
+  .work-caption {
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0.35rem 0.25rem 0;
+  }
+
+  /* Story */
+  .story {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .story-portrait { aspect-ratio: 4 / 5; }
+  .story p { color: var(--ink-2); margin: 1rem 0; }
+
+  /* Investment / Impact rows */
+  .rows { display: grid; gap: 1px; background: var(--rule); border-block: 1px solid var(--rule); }
+  .row {
+    background: var(--ground);
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+    gap: 3rem;
+    padding: 2rem 0;
+    align-items: baseline;
+  }
+  .row .label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    font-weight: 600;
+  }
+  .row h3 { margin-bottom: 0.5rem; }
+  .row p { margin: 0; color: var(--ink-2); max-width: 42rem; }
+  .row .link {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink);
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+  }
+
+  /* Wearable art two-col */
+  .wearable {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .wearable-art { aspect-ratio: 1 / 1; }
+  .wearable p { color: var(--ink-2); margin: 1rem 0 1.75rem; }
+
+  /* Testimonial */
+  .testimonial {
+    text-align: center;
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+  .testimonial blockquote {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    line-height: 1.35;
+    color: var(--ink);
+    margin: 0 0 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+    text-wrap: balance;
+  }
+  .testimonial cite {
+    font-style: normal;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 3.5rem 0 2rem;
+    color: var(--ink-2);
+    font-size: 0.88rem;
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: 3rem;
+    padding-bottom: 2.5rem;
+  }
+  footer h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 1rem;
+    font-weight: 600;
+  }
+  footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.55rem; }
+  footer a:hover { color: var(--ink); }
+  .foot-brand p { margin: 0.75rem 0 0; max-width: 22rem; }
+  .newsletter { display: flex; gap: 0.5rem; margin-top: 1rem; }
+  .newsletter input {
+    flex: 1;
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    padding: 0.7rem 0.85rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    border-radius: 2px;
+  }
+  .newsletter input:focus { outline: none; border-color: var(--accent); }
+  .newsletter button {
+    background: var(--ink); color: var(--ground);
+    border: none; padding: 0 1.1rem;
+    font-family: inherit; font-size: 0.75rem;
+    letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;
+    cursor: pointer; border-radius: 2px;
+  }
+  .foot-bar {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    display: flex; justify-content: space-between;
+    font-size: 0.78rem; color: var(--ink-3);
+  }
+
+  @media (max-width: 900px) {
+    .hero, .story, .wearable { grid-template-columns: 1fr; gap: 2.5rem; }
+    .works { grid-template-columns: 1fr 1fr; }
+    .row { grid-template-columns: 1fr; gap: 0.75rem; padding: 1.5rem 0; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    nav.top ul { display: none; }
+    .section-head { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 560px) {
+    .container { padding: 0 1.25rem; }
+    nav.top .inner { padding: 1rem 1.25rem; }
+    .works { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr; }
+    .foot-bar { flex-direction: column; gap: 0.5rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="#">Fine Arts <span>by Henrimae</span></a>
+    <ul>
+      <li><a href="#works">Shop</a></li>
+      <li><a href="#invest">Invest in Art</a></li>
+      <li><a href="#story">My Story</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="actions">
+      <a href="#" aria-label="Search">Search</a>
+      <a href="#" aria-label="Cart">Cart (0)</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero container" style="border-top: none;">
+    <div class="lede">
+      <p class="eyebrow">Original Works · Limited Editions</p>
+      <h1>Shaped by global influences, rooted in the American South.</h1>
+      <p>The studio of Henrimae H. Bell — painter, former intellectual property attorney, and student of masters across three continents. Each piece is a study in classical technique brought into contemporary conversation.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#works">Shop the Collection</a>
+        <a class="btn btn-ghost" href="#story">Read My Story</a>
+      </div>
+    </div>
+    <div class="placeholder hero-art">art goes here</div>
+  </section>
+
+  <section id="works" class="container">
+    <div class="section-head">
+      <div class="lead">
+        <p class="eyebrow">Featured Collection</p>
+        <h2>Hats, Wraps, and Crowns</h2>
+        <p>A series celebrating the sculptural language of head adornment across the diaspora. Original oil on canvas.</p>
+      </div>
+      <a class="btn btn-ghost" href="#">View All Works</a>
+    </div>
+
+    <div class="works">
+      <article>
+        <div class="placeholder work-art">art goes here</div>
+        <div class="work-meta">
+          <div class="work-title">Black Pearl</div>
+          <div class="work-price">$2,500</div>
+        </div>
+        <p class="work-caption">Oil on Canvas · 36 × 48 in.</p>
+      </article>
+      <article>
+        <div class="placeholder work-art">art goes here</div>
+        <div class="work-meta">
+          <div class="work-title">Bowed Heads, Humble Hearts</div>
+          <div class="work-price">$1,850</div>
+        </div>
+        <p class="work-caption">Oil on Canvas · 30 × 40 in.</p>
+      </article>
+      <article>
+        <div class="placeholder work-art">art goes here</div>
+        <div class="work-meta">
+          <div class="work-title">Crown of the Elder</div>
+          <div class="work-price">$699</div>
+        </div>
+        <p class="work-caption">Limited Edition Giclée · 18 × 24 in.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="story" class="container">
+    <div class="story">
+      <div class="placeholder story-portrait">image goes here</div>
+      <div>
+        <p class="eyebrow">The Artist</p>
+        <h2>From patent law to painter's studio.</h2>
+        <p>Henrimae H. Bell spent two decades practicing intellectual property law at IBM before answering a call she had carried since childhood. Today, she paints full-time from her studio in the American South.</p>
+        <p>Her training has taken her from ateliers in Florence and Paris to workshops with master portraitists in West Africa — a lineage of technique that shapes every canvas she signs.</p>
+        <a class="btn btn-ghost" href="#">Read the Full Story</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="invest" class="container">
+    <div class="section-head">
+      <div class="lead">
+        <p class="eyebrow">Invest in Art</p>
+        <h2>A collection that appreciates in more ways than one.</h2>
+        <p>Original works and limited editions have historically outperformed traditional asset classes over long horizons — while enriching the walls and communities they live in.</p>
+      </div>
+    </div>
+
+    <div class="rows">
+      <div class="row">
+        <div class="label">01 · Originals</div>
+        <div>
+          <h3>Single-Signature Works</h3>
+          <p>One-of-one paintings, provenance-documented and accompanied by a signed certificate of authenticity.</p>
+        </div>
+        <a class="link" href="#">View</a>
+      </div>
+      <div class="row">
+        <div class="label">02 · Editions</div>
+        <div>
+          <h3>Limited-Edition Giclée</h3>
+          <p>Museum-grade prints in editions of no more than fifty, each numbered and signed by the artist.</p>
+        </div>
+        <a class="link" href="#">View</a>
+      </div>
+      <div class="row">
+        <div class="label">03 · Commissions</div>
+        <div>
+          <h3>Bespoke Portraiture</h3>
+          <p>Private and corporate commissions accepted on a rolling basis. Six-month typical timeline from sitting to signature.</p>
+        </div>
+        <a class="link" href="#">Inquire</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="wearable">
+      <div>
+        <p class="eyebrow">Wearable Art</p>
+        <h2>Picking Poppies, and other silk scarves.</h2>
+        <p>A capsule of hand-finished silk scarves that translate the brushwork of the paintings into something you can carry with you. Each design is released in a run of one hundred.</p>
+        <a class="btn btn-primary" href="#">Shop Scarves</a>
+      </div>
+      <div class="placeholder wearable-art">art goes here</div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="testimonial">
+      <p class="eyebrow">In Their Words</p>
+      <blockquote>"The detail is arresting, but what stayed with me was the reverence — a whole culture held gently in a single face."</blockquote>
+      <cite>— A. Reynolds, Private Collector</cite>
+    </div>
+  </section>
+
+  <section id="impact" class="container">
+    <div class="section-head">
+      <div class="lead">
+        <p class="eyebrow">Community Impact · HBCU Give-Back</p>
+        <h2>Ten percent of every sale funds the DLBMSF Scholarship at Albany State University — a Historically Black College and University.</h2>
+        <p>Every original, edition, and scarf you take home routes 10% of the sale directly into scholarship funding at Albany State (Albany, Georgia), an HBCU with more than a century of educating Black leaders. Your purchase is a tuition check for the next generation of thinkers, makers, and artists.</p>
+      </div>
+      <a class="btn btn-ghost" href="#">Learn More</a>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">Fine Arts <span style="color: var(--accent-ink);">by Henrimae</span></div>
+        <p>Studio inquiries, commissions, and press:<br>studio@fineartsbyhenrimae.com</p>
+        <form class="newsletter" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="Your email" aria-label="Email address">
+          <button type="submit">Join</button>
+        </form>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Originals</a></li>
+          <li><a href="#">Limited Editions</a></li>
+          <li><a href="#">Scarves</a></li>
+          <li><a href="#">Commissions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="#">My Story</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Exhibitions</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <div>© 2026 Fine Arts by Henrimae. All rights reserved.</div>
+      <div>Made with care in the American South.</div>
+    </div>
+  </div>
+</footer>
