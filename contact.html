@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
   <title>Contact Us — Fine Art by Henrimae</title>
   <meta name="description" content="Get in touch with Fine Art by Henrimae." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,18 +22,18 @@
       <button class="icon-btn menu-toggle" aria-label="Open menu" data-open="menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
-      <a href="index.html" class="logo">Fine Art <span>by</span> Henrimae</a>
+      <a href="index.html" class="logo" aria-label="Fine Art by Henrimae — Home"><img src="logo.png" alt="Fine Art by Henrimae" class="logo-mark" width="469" height="479" loading="eager" decoding="async"></a>
       <nav class="primary" aria-label="Primary">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li class="nav-dropdown">
             <a href="shop.html">Shop Now ▾</a>
             <ul class="dropdown-menu">
-              <li><a href="shop.html">Originals</a></li>
-              <li><a href="shop.html">Giclée Prints</a></li>
-              <li><a href="shop.html">Wearable Art</a></li>
+              <li><a href="shop.html">Limited-Edition Giclées</a></li>
+              <li><a href="shop.html#wearable">Wearable Art Scarves</a></li>
+              <li><a href="shop.html#puzzle">Puzzles</a></li>
               <li><a href="ebooks.html">Ejournals &amp; Ebooks</a></li>
-              <li><a href="shop.html">Puzzles</a></li>
+              <li><a href="contact.html">Book a Speaking Engagement</a></li>
             </ul>
           </li>
           <li><a href="invest.html">Invest In Art</a></li>
@@ -58,7 +60,7 @@
       <div class="container">
         <div class="breadcrumb"><a href="index.html">Home</a> · Contact Us</div>
         <h1>Contact <em>Us</em></h1>
-        <p style="max-width:560px; margin: 0 auto; color: var(--muted);">Questions about a piece, a commission, or a visit to the studio? Reach out below.</p>
+        <p style="max-width:600px; margin: 0 auto; color: var(--muted);">Questions about a giclée edition, a wearable piece, or booking Henrimae for a speaking engagement? Reach out below.</p>
       </div>
     </section>
 
@@ -68,17 +70,17 @@
           <div class="contact-card reveal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="m4 8 8 6 8-6"/></svg>
             <h3>Email</h3>
-            <p><a href="mailto:hello@fineartbyhenrimae.com">hello@fineartbyhenrimae.com</a></p>
+            <p><a href="mailto:henrimaebell@gmail.com">henrimaebell@gmail.com</a></p>
+          </div>
+          <div class="contact-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+            <h3>Book a Speaking Engagement</h3>
+            <p><a href="mailto:henrimaebell@gmail.com?subject=Speaking%20Engagement%20Inquiry">Request availability</a></p>
           </div>
           <div class="contact-card reveal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.7A2 2 0 0 1 22 16.9Z"/></svg>
             <h3>Phone</h3>
             <p><a href="tel:+15550100">+1 (555) 010-0100</a></p>
-          </div>
-          <div class="contact-card reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <h3>Studio</h3>
-            <p>By appointment · Florida</p>
           </div>
         </div>
 
@@ -97,8 +99,10 @@
             <label for="c-subject">Subject</label>
             <select id="c-subject">
               <option>General inquiry</option>
-              <option>Commission a piece</option>
-              <option>Investment consultation</option>
+              <option>Book a speaking engagement</option>
+              <option>Limited-edition giclée order</option>
+              <option>Wearable art scarves</option>
+              <option>Puzzles</option>
               <option>Press &amp; features</option>
               <option>Shipping &amp; returns</option>
             </select>
@@ -118,22 +122,30 @@
           <span class="section-eyebrow">FAQ</span>
           <h2>Common <em>questions</em>.</h2>
         </div>
-        <div class="values" style="grid-template-columns: 1fr 1fr; gap: 24px; max-width: 960px; margin: 0 auto;">
+        <div class="values" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 960px; margin: 0 auto;">
           <div class="value-card reveal">
-            <h3>Do you ship internationally?</h3>
-            <p>Yes. Rates and customs are quoted at checkout.</p>
-          </div>
-          <div class="value-card reveal">
-            <h3>Are originals unique?</h3>
-            <p>Each original is one of one, signed, and delivered with a certificate of authenticity.</p>
+            <h3>Do you sell originals?</h3>
+            <p>Original paintings are not offered for sale. Each image is released as a signed, numbered limited-edition giclée instead.</p>
           </div>
           <div class="value-card reveal">
             <h3>How are giclées produced?</h3>
-            <p>On archival cotton paper with pigment inks, in small numbered editions.</p>
+            <p>Limited-edition giclées are printed on demand by Pictorem, a Shopify-integrated print studio. Price varies by the size and surface you choose at checkout.</p>
           </div>
           <div class="value-card reveal">
-            <h3>Can I commission a piece?</h3>
-            <p>Yes — use the form above and select "Commission a piece."</p>
+            <h3>How do I order a scarf or puzzle?</h3>
+            <p>Wearable art scarves and puzzles are handled directly by the studio. Email <a href="mailto:henrimaebell@gmail.com">henrimaebell@gmail.com</a> to reserve a piece.</p>
+          </div>
+          <div class="value-card reveal">
+            <h3>Do you take commissions?</h3>
+            <p>The studio is not accepting new commissions at this time. Henrimae is available to book for speaking engagements — email the studio to request availability.</p>
+          </div>
+          <div class="value-card reveal">
+            <h3>Do you offer studio visits?</h3>
+            <p>Studio appointments are not currently offered. All communication is handled by email.</p>
+          </div>
+          <div class="value-card reveal">
+            <h3>Do you ship internationally?</h3>
+            <p>Yes. Giclée editions ship worldwide via Pictorem; rates are quoted at checkout.</p>
           </div>
         </div>
       </div>
@@ -145,8 +157,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">Fine Art <span>by</span> Henrimae</a>
-          <p>Southern tradition, worldly craft. Original artwork, giclées, wearable pieces, and ebooks from the studio of Henrimae H. Bell.</p>
+          <a href="index.html" class="logo" aria-label="Fine Art by Henrimae — Home"><img src="logo.png" alt="Fine Art by Henrimae" class="logo-mark" width="469" height="479" loading="eager" decoding="async"></a>
+          <p>Southern tradition, worldly craft. Limited-edition giclées, wearable art scarves, puzzles, and ebooks from the studio of Henrimae H. Bell.</p>
         </div>
         <div>
           <h4>Quick Links</h4>

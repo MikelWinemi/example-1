@@ -68,6 +68,8 @@ const cartCount = document.getElementById('cart-count');
 let count = parseInt(sessionStorage.getItem('cart-count') || '0', 10);
 if (cartCount) cartCount.textContent = count;
 document.querySelectorAll('.quick-add').forEach(btn => {
+  // Inquiry links (wearables / puzzles) navigate to mailto — skip cart logic.
+  if (btn.tagName === 'A') return;
   btn.dataset.original = btn.textContent.replace(/^Quick Add · /, '');
   btn.addEventListener('click', e => {
     e.stopPropagation();

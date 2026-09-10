@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
   <title>Fine Art by Henrimae — Shaped By Global Influences</title>
-  <meta name="description" content="Original paintings, limited-edition giclées, wearable art, ejournals & ebooks from Henrimae H. Bell." />
+  <meta name="description" content="Limited-edition giclées, wearable art scarves, puzzles, ejournals & ebooks from the studio of Henrimae H. Bell." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -21,18 +23,18 @@
       <button class="icon-btn menu-toggle" aria-label="Open menu" data-open="menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
-      <a href="index.html" class="logo">Fine Art <span>by</span> Henrimae</a>
+      <a href="index.html" class="logo" aria-label="Fine Art by Henrimae — Home"><img src="logo.png" alt="Fine Art by Henrimae" class="logo-mark" width="469" height="479" loading="eager" decoding="async"></a>
       <nav class="primary" aria-label="Primary">
         <ul>
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li class="nav-dropdown">
             <a href="shop.html">Shop Now ▾</a>
             <ul class="dropdown-menu">
-              <li><a href="shop.html">Originals</a></li>
-              <li><a href="shop.html">Giclée Prints</a></li>
-              <li><a href="shop.html">Wearable Art</a></li>
+              <li><a href="shop.html">Limited-Edition Giclées</a></li>
+              <li><a href="shop.html#wearable">Wearable Art Scarves</a></li>
+              <li><a href="shop.html#puzzle">Puzzles</a></li>
               <li><a href="ebooks.html">Ejournals &amp; Ebooks</a></li>
-              <li><a href="shop.html">Puzzles</a></li>
+              <li><a href="contact.html">Book a Speaking Engagement</a></li>
             </ul>
           </li>
           <li><a href="invest.html">Invest In Art</a></li>
@@ -139,7 +141,6 @@
         <div class="products-toolbar">
           <ul class="filter-tabs" role="tablist">
             <li><button class="active" data-filter="all">All</button></li>
-            <li><button data-filter="original">Originals</button></li>
             <li><button data-filter="giclee">Giclée</button></li>
             <li><button data-filter="wearable">Wearable</button></li>
           </ul>
@@ -154,59 +155,59 @@
         </div>
 
         <div class="products-grid" id="products">
-          <article class="product reveal" data-category="original">
+          <article class="product reveal" data-category="giclee">
             <div class="product-image">
-              <span class="product-badge accent">Original</span>
+              <span class="product-badge accent">Ltd. Ed. Giclée</span>
               <div class="art art-1"></div>
-              <button class="quick-add">Quick Add · $699</button>
+              <button class="quick-add">Quick Add · From $380</button>
             </div>
-            <h3>BLACK PEARL</h3>
-            <p class="price"><span class="from">From</span>$699.00</p>
-          </article>
-          <article class="product reveal" data-category="original">
-            <div class="product-image">
-              <span class="product-badge accent">Original</span>
-              <div class="art art-2"></div>
-              <button class="quick-add">Quick Add · $2,500</button>
-            </div>
-            <h3>BOWED HEADS AND HUMBLE HEARTS</h3>
-            <p class="price">$2,500.00</p>
-          </article>
-          <article class="product reveal" data-category="original">
-            <div class="product-image">
-              <span class="product-badge">Sale</span>
-              <div class="art art-3"></div>
-              <button class="quick-add">Quick Add · $1,500</button>
-            </div>
-            <h3>Grateful!!</h3>
-            <p class="price">$1,500.00 <span style="text-decoration: line-through; opacity: 0.5; margin-left: 6px;">$1,800.00</span></p>
-          </article>
-          <article class="product reveal" data-category="original">
-            <div class="product-image">
-              <span class="product-badge">Sale</span>
-              <div class="art art-4"></div>
-              <button class="quick-add">Quick Add · $1,200</button>
-            </div>
-            <h3>Peace Be Still</h3>
-            <p class="price">$1,200.00 <span style="text-decoration: line-through; opacity: 0.5; margin-left: 6px;">$1,800.00</span></p>
+            <h3>Black Pearl</h3>
+            <p class="price"><span class="from">From</span>$380.00</p>
           </article>
           <article class="product reveal" data-category="giclee">
             <div class="product-image">
-              <span class="product-badge">Giclée</span>
-              <div class="art art-5"></div>
-              <button class="quick-add">Quick Add · $450</button>
+              <span class="product-badge accent">Ltd. Ed. Giclée</span>
+              <div class="art art-2"></div>
+              <button class="quick-add">Quick Add · From $520</button>
             </div>
-            <h3>GOLDEN</h3>
-            <p class="price">$450.00</p>
+            <h3>Bowed Heads and Humble Hearts</h3>
+            <p class="price"><span class="from">From</span>$520.00</p>
+          </article>
+          <article class="product reveal" data-category="giclee">
+            <div class="product-image">
+              <span class="product-badge">Sale</span>
+              <div class="art art-3"></div>
+              <button class="quick-add">Quick Add · From $340</button>
+            </div>
+            <h3>Grateful!!</h3>
+            <p class="price"><span class="from">From</span>$340.00 <span style="text-decoration: line-through; opacity: 0.5; margin-left: 6px;">$420.00</span></p>
+          </article>
+          <article class="product reveal" data-category="giclee">
+            <div class="product-image">
+              <span class="product-badge">Sale</span>
+              <div class="art art-4"></div>
+              <button class="quick-add">Quick Add · From $300</button>
+            </div>
+            <h3>Peace Be Still</h3>
+            <p class="price"><span class="from">From</span>$300.00 <span style="text-decoration: line-through; opacity: 0.5; margin-left: 6px;">$380.00</span></p>
+          </article>
+          <article class="product reveal" data-category="giclee">
+            <div class="product-image">
+              <span class="product-badge accent">Ltd. Ed. Giclée</span>
+              <div class="art art-5"></div>
+              <button class="quick-add">Quick Add · From $450</button>
+            </div>
+            <h3>Golden</h3>
+            <p class="price"><span class="from">From</span>$450.00</p>
           </article>
           <article class="product reveal" data-category="wearable">
             <div class="product-image">
-              <span class="product-badge">Wearable</span>
+              <span class="product-badge">Silk Scarf</span>
               <div class="art art-6"></div>
-              <button class="quick-add">Quick Add · $180</button>
+              <a class="quick-add" href="mailto:henrimaebell@gmail.com?subject=Wearable%20Art%20Inquiry%20%E2%80%94%20Picking%20Poppies">Email to Order</a>
             </div>
             <h3>Picking Poppies</h3>
-            <p class="price"><span class="from">From</span>$180.00</p>
+            <p class="price">Email for pricing &amp; availability</p>
           </article>
         </div>
         <div class="products-cta">
@@ -310,9 +311,11 @@
         <div class="artist-portrait reveal"></div>
         <div class="artist-text reveal">
           <span class="section-eyebrow">My Story</span>
-          <h2>Henrimae <em>Bell</em>.</h2>
-          <p>Henrimae Bell transitioned from a distinguished career in intellectual property law at IBM to founding her own fine art studio. Trained by master artists from Florence, Italy, New York, to Florida, her work blends classical technique with contemporary expression, creating visual narratives that reflect both tradition and innovation.</p>
-          <a href="story.html" class="btn btn-outline">My Story</a>
+          <h2>Henrimae Henderson <em>Bell</em>.</h2>
+          <p>Henrimae H. Bell is an entrepreneur, fine artist, wearable art designer, and author whose career blends business leadership with creative expression.</p>
+          <p>Following three decades at International Business Machines (IBM) — retiring as Worldwide Manager of Information and Support at Corporate Headquarters in Armonk, New York — Henrimae turned her passion for fine art into a thriving second career. Her artwork has been showcased in numerous galleries and interior design shops, as well as her own studio in historic downtown Melbourne, Florida. She has also served on the Board of Directors of the Florida Artist Group (FLAG).</p>
+          <p>Today, Henrimae continues to expand her creative vision through limited-edition giclées, wearable art, and published works — bringing her artistic talents and business expertise to each new endeavor.</p>
+          <a href="story.html" class="btn btn-outline">Read the Full Story</a>
         </div>
       </div>
     </section>
@@ -339,7 +342,7 @@
           </div>
           <div class="value-card reveal">
             <h3>Investment Opportunity</h3>
-            <p>At Henrimae Bell's Fine Art Studio, we create legacy through fine and wearable art—originals, giclées, journals, puzzles, books, and more. Each piece honors culture, beauty, and intention. Your purchase supports the Dale L. Bell Memorial Scholarship and builds generational wealth through art.</p>
+            <p>At Henrimae Bell's Fine Art Studio, we create legacy through fine and wearable art — limited-edition giclées, silk scarves, puzzles, journals, and books. Each piece honors culture, beauty, and intention. Your purchase supports the Dale L. Bell Memorial Scholarship and builds generational wealth through art.</p>
           </div>
         </div>
       </div>
@@ -407,8 +410,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">Fine Art <span>by</span> Henrimae</a>
-          <p>Southern tradition, worldly craft. Original artwork, giclées, wearable pieces, and ebooks from the studio of Henrimae H. Bell.</p>
+          <a href="index.html" class="logo" aria-label="Fine Art by Henrimae — Home"><img src="logo.png" alt="Fine Art by Henrimae" class="logo-mark" width="469" height="479" loading="eager" decoding="async"></a>
+          <p>Southern tradition, worldly craft. Limited-edition giclées, wearable art scarves, puzzles, and ebooks from the studio of Henrimae H. Bell.</p>
         </div>
         <div>
           <h4>Quick Links</h4>

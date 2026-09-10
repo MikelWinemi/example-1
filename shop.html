@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
   <title>Shop Now — Fine Art by Henrimae</title>
-  <meta name="description" content="Browse originals, giclées, wearable art, and more from the studio of Henrimae H. Bell." />
+  <meta name="description" content="Browse limited-edition giclées, wearable art scarves, and puzzles from the studio of Henrimae H. Bell." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -20,18 +22,18 @@
       <button class="icon-btn menu-toggle" aria-label="Open menu" data-open="menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
-      <a href="index.html" class="logo">Fine Art <span>by</span> Henrimae</a>
+      <a href="index.html" class="logo" aria-label="Fine Art by Henrimae — Home"><img src="logo.png" alt="Fine Art by Henrimae" class="logo-mark" width="469" height="479" loading="eager" decoding="async"></a>
       <nav class="primary" aria-label="Primary">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li class="nav-dropdown">
             <a href="shop.html" aria-current="page">Shop Now ▾</a>
             <ul class="dropdown-menu">
-              <li><a href="shop.html">Originals</a></li>
-              <li><a href="shop.html">Giclée Prints</a></li>
-              <li><a href="shop.html">Wearable Art</a></li>
+              <li><a href="shop.html">Limited-Edition Giclées</a></li>
+              <li><a href="shop.html#wearable">Wearable Art Scarves</a></li>
+              <li><a href="shop.html#puzzle">Puzzles</a></li>
               <li><a href="ebooks.html">Ejournals &amp; Ebooks</a></li>
-              <li><a href="shop.html">Puzzles</a></li>
+              <li><a href="contact.html">Book a Speaking Engagement</a></li>
             </ul>
           </li>
           <li><a href="invest.html">Invest In Art</a></li>
@@ -58,19 +60,23 @@
       <div class="container">
         <div class="breadcrumb"><a href="index.html">Home</a> · Shop Now</div>
         <h1>Shop <em>The Collection</em></h1>
-        <p style="max-width:560px; margin: 0 auto; color: var(--muted);">Originals, giclée prints, and wearable art — one place.</p>
+        <p style="max-width:640px; margin: 0 auto; color: var(--muted);">Limited-edition giclées, wearable art scarves, and puzzles from the studio.</p>
       </div>
     </section>
 
-    <section>
+    <section id="giclee">
       <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Limited-Edition Giclées</span>
+          <h2>Museum-grade prints in <em>numbered</em> editions.</h2>
+          <p>Originals are not offered for sale — the studio releases each image as a signed, numbered giclée edition instead.</p>
+        </div>
+
         <div class="products-toolbar">
           <ul class="filter-tabs" role="tablist">
-            <li><button class="active" data-filter="all">All</button></li>
-            <li><button data-filter="original">Originals</button></li>
-            <li><button data-filter="giclee">Giclée</button></li>
-            <li><button data-filter="wearable">Wearable</button></li>
-            <li><button data-filter="puzzle">Puzzles</button></li>
+            <li><button class="active" data-filter="all">All Giclées</button></li>
+            <li><button data-filter="giclee">Available</button></li>
+            <li><button data-filter="sale">On Sale</button></li>
           </ul>
           <label>
             <select class="sort-select" aria-label="Sort products">
@@ -83,88 +89,154 @@
         </div>
 
         <div class="products-grid" id="products">
-          <article class="product reveal" data-category="original">
+          <article class="product reveal" data-category="giclee">
             <div class="product-image">
-              <span class="product-badge accent">Original</span>
+              <span class="product-badge accent">Ltd. Ed. Giclée</span>
               <div class="art art-1"></div>
-              <button class="quick-add">Quick Add · $699</button>
+              <button class="quick-add">Quick Add · From $380</button>
             </div>
-            <h3>BLACK PEARL</h3>
-            <p class="price"><span class="from">From</span>$699.00</p>
+            <h3>Black Pearl</h3>
+            <p class="price"><span class="from">From</span>$380.00</p>
           </article>
-          <article class="product reveal" data-category="original">
+          <article class="product reveal" data-category="giclee">
             <div class="product-image">
-              <span class="product-badge accent">Original</span>
+              <span class="product-badge accent">Ltd. Ed. Giclée</span>
               <div class="art art-2"></div>
-              <button class="quick-add">Quick Add · $2,500</button>
+              <button class="quick-add">Quick Add · From $520</button>
             </div>
-            <h3>BOWED HEADS AND HUMBLE HEARTS</h3>
-            <p class="price">$2,500.00</p>
+            <h3>Bowed Heads and Humble Hearts</h3>
+            <p class="price"><span class="from">From</span>$520.00</p>
           </article>
-          <article class="product reveal" data-category="original">
+          <article class="product reveal" data-category="sale">
             <div class="product-image">
               <span class="product-badge">Sale</span>
               <div class="art art-3"></div>
-              <button class="quick-add">Quick Add · $1,500</button>
+              <button class="quick-add">Quick Add · From $340</button>
             </div>
             <h3>Grateful!!</h3>
-            <p class="price">$1,500.00 <span style="text-decoration: line-through; opacity: 0.5; margin-left: 6px;">$1,800.00</span></p>
+            <p class="price"><span class="from">From</span>$340.00 <span style="text-decoration: line-through; opacity: 0.5; margin-left: 6px;">$420.00</span></p>
           </article>
-          <article class="product reveal" data-category="original">
+          <article class="product reveal" data-category="sale">
             <div class="product-image">
               <span class="product-badge">Sale</span>
               <div class="art art-4"></div>
-              <button class="quick-add">Quick Add · $1,200</button>
+              <button class="quick-add">Quick Add · From $300</button>
             </div>
             <h3>Peace Be Still</h3>
-            <p class="price">$1,200.00 <span style="text-decoration: line-through; opacity: 0.5; margin-left: 6px;">$1,800.00</span></p>
+            <p class="price"><span class="from">From</span>$300.00 <span style="text-decoration: line-through; opacity: 0.5; margin-left: 6px;">$380.00</span></p>
           </article>
           <article class="product reveal" data-category="giclee">
             <div class="product-image">
-              <span class="product-badge">Giclée</span>
+              <span class="product-badge accent">Ltd. Ed. Giclée</span>
               <div class="art art-5"></div>
-              <button class="quick-add">Quick Add · $450</button>
+              <button class="quick-add">Quick Add · From $450</button>
             </div>
-            <h3>GOLDEN</h3>
-            <p class="price">$450.00</p>
+            <h3>Golden</h3>
+            <p class="price"><span class="from">From</span>$450.00</p>
           </article>
-          <article class="product reveal" data-category="wearable">
+          <article class="product reveal" data-category="giclee">
             <div class="product-image">
-              <span class="product-badge">Wearable</span>
+              <span class="product-badge accent">Ltd. Ed. Giclée</span>
+              <div class="art art-2"></div>
+              <button class="quick-add">Quick Add · From $420</button>
+            </div>
+            <h3>Hats, Wraps &amp; Crowns</h3>
+            <p class="price"><span class="from">From</span>$420.00</p>
+          </article>
+        </div>
+
+        <aside class="print-note reveal" aria-label="Printing details">
+          <div class="print-note-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="9" width="12" height="8" rx="1"/><path d="M6 13H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12v4H6z"/></svg>
+          </div>
+          <div>
+            <h4>Printed on demand by Pictorem</h4>
+            <p>Limited-edition giclées are produced by <a href="https://www.pictorem.com" target="_blank" rel="noopener">Pictorem</a>, a Shopify-integrated print-on-demand studio. Final price depends on the size and surface you select at checkout (canvas, aluminum, acrylic, or fine-art paper). Every edition is signed and numbered by the artist.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="asterisk-divider" aria-hidden="true"><span>* * *</span></div>
+
+    <section id="wearable" style="background: var(--bg-alt);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Wearable Art Scarves</span>
+          <h2>Hand-finished <em>silk</em>, translated from the brushwork.</h2>
+          <p>Scarves and wraps are made in small studio runs and are not sold through the cart. Reach out directly to reserve a piece or ask about a design.</p>
+        </div>
+
+        <div class="products-grid">
+          <article class="product reveal">
+            <div class="product-image">
+              <span class="product-badge">Silk Scarf</span>
               <div class="art art-6"></div>
-              <button class="quick-add">Quick Add · $180</button>
+              <a class="quick-add" href="mailto:henrimaebell@gmail.com?subject=Wearable%20Art%20Inquiry%20%E2%80%94%20Picking%20Poppies">Email to Order</a>
             </div>
             <h3>Picking Poppies</h3>
-            <p class="price"><span class="from">From</span>$180.00</p>
+            <p class="price">Email for pricing &amp; availability</p>
           </article>
-          <article class="product reveal" data-category="giclee">
+          <article class="product reveal">
             <div class="product-image">
-              <span class="product-badge">Giclée</span>
-              <div class="art art-1"></div>
-              <button class="quick-add">Quick Add · $380</button>
-            </div>
-            <h3>Black Pearl Giclée</h3>
-            <p class="price">$380.00</p>
-          </article>
-          <article class="product reveal" data-category="wearable">
-            <div class="product-image">
-              <span class="product-badge">Wearable</span>
+              <span class="product-badge">Silk Wrap</span>
               <div class="art art-3"></div>
-              <button class="quick-add">Quick Add · $220</button>
+              <a class="quick-add" href="mailto:henrimaebell@gmail.com?subject=Wearable%20Art%20Inquiry%20%E2%80%94%20Grateful%20Silk%20Wrap">Email to Order</a>
             </div>
             <h3>Grateful Silk Wrap</h3>
-            <p class="price">$220.00</p>
+            <p class="price">Email for pricing &amp; availability</p>
           </article>
-          <article class="product reveal" data-category="puzzle">
+          <article class="product reveal">
+            <div class="product-image">
+              <span class="product-badge">Silk Scarf</span>
+              <div class="art art-5"></div>
+              <a class="quick-add" href="mailto:henrimaebell@gmail.com?subject=Wearable%20Art%20Inquiry%20%E2%80%94%20Golden">Email to Order</a>
+            </div>
+            <h3>Golden</h3>
+            <p class="price">Email for pricing &amp; availability</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="puzzle">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Art Puzzles</span>
+          <h2>The paintings, in <em>pieces</em>.</h2>
+          <p>Puzzles are produced in small runs. Contact the studio directly to reserve one, or ask which images are currently in production.</p>
+        </div>
+
+        <div class="products-grid">
+          <article class="product reveal">
             <div class="product-image">
               <span class="product-badge">Puzzle</span>
               <div class="art art-6"></div>
-              <button class="quick-add">Quick Add · $48</button>
+              <a class="quick-add" href="mailto:henrimaebell@gmail.com?subject=Puzzle%20Inquiry%20%E2%80%94%20Picking%20Poppies">Email to Order</a>
             </div>
             <h3>Picking Poppies Puzzle</h3>
-            <p class="price">$48.00</p>
+            <p class="price">Email for pricing &amp; availability</p>
+          </article>
+          <article class="product reveal">
+            <div class="product-image">
+              <span class="product-badge">Puzzle</span>
+              <div class="art art-1"></div>
+              <a class="quick-add" href="mailto:henrimaebell@gmail.com?subject=Puzzle%20Inquiry%20%E2%80%94%20Black%20Pearl">Email to Order</a>
+            </div>
+            <h3>Black Pearl Puzzle</h3>
+            <p class="price">Email for pricing &amp; availability</p>
           </article>
         </div>
+
+        <aside class="print-note reveal" aria-label="Puzzle production">
+          <div class="print-note-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h7v5a2 2 0 0 0 4 0V4h5v7h-5a2 2 0 0 0 0 4h5v5h-7v-5a2 2 0 0 0-4 0v5H4V4z"/></svg>
+          </div>
+          <div>
+            <h4>Puzzle production note</h4>
+            <p>The studio is actively reviewing print-on-demand vendors that integrate with Shopify so puzzles can be ordered directly on the site. Until then, all puzzle orders go through <a href="mailto:henrimaebell@gmail.com">henrimaebell@gmail.com</a>.</p>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -174,8 +246,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">Fine Art <span>by</span> Henrimae</a>
-          <p>Southern tradition, worldly craft. Original artwork, giclées, wearable pieces, and ebooks from the studio of Henrimae H. Bell.</p>
+          <a href="index.html" class="logo" aria-label="Fine Art by Henrimae — Home"><img src="logo.png" alt="Fine Art by Henrimae" class="logo-mark" width="469" height="479" loading="eager" decoding="async"></a>
+          <p>Southern tradition, worldly craft. Limited-edition giclées, wearable art scarves, puzzles, and ebooks from the studio of Henrimae H. Bell.</p>
         </div>
         <div>
           <h4>Quick Links</h4>
